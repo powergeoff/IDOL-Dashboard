@@ -1,0 +1,108 @@
+
+<div class="jumbotron">
+    <h3>{{title}}</h3>
+  </div>
+  
+  <ngb-tabset *ngIf="configModel; let config; else loading">
+    <ngb-tab *ngFor="let env of config; let i of index" title="{{env.environment}}">
+      <ng-template ngbTabContent>
+        <div class="row">
+          <div class="col">Server Name: {{env.server}}</div>
+        </div>
+        <div class="row ">
+          <div class="col">License Server</div>
+          <div class="col">
+            <div *ngIf="env.licenseServer.isValid !== undefined; else licenseDown">
+              <img class="validation-image" [src]="env.licenseServer.isValid ? 'assets/images/tick.png': 'assets/images/cross.png'" alt='validation check'>
+            </div>
+            <ng-template #licenseDown>
+            </ng-template>
+          </div>
+        </div>
+        <div *ngFor="let instance of env.instances;">
+          <div *ngFor="let component of instance.components;">
+            <div *ngIf="component.isQueryable === true && component.isActive === true">
+              <div class="row ">
+                <div class="col">{{instance.name + " " + component.name }}</div>
+                <div class="col">
+                  <div *ngIf="component.isValid !== undefined; else licenseDown">
+                    <img class="validation-image" [src]="component.isValid ? 'assets/images/tick.png': 'assets/images/cross.png'" alt='validation check'>
+                  </div>
+                  <ng-template #licenseDown>
+                  </ng-template>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="footer ">
+          <div class="container">
+            <div class="row">
+          <div class="col">
+            <input type="button" (click)="isEnvironmentValid(env.environment, modalContent)" value="Check {{env.environment}} IDOL Status"
+              class="btn btn-primary" />
+          </div>
+          <div class="col">
+              <a [routerLink]="['/details', env.environment]" class="btn btn-outline-secondary">
+                View {{env.environment}} Details
+              </a>
+          </div>
+
+        </div>
+
+        </div>
+
+        </div>
+  
+        <ng-template #modalContent let-c="close" let-d="dismiss">
+          <div *ngIf="isModalContentReady === true; else modalLoading">
+            <div *ngIf="env.isValid === false; else success">
+              <div class="modal-header">
+                <h4 class="modal-title">{{env.environment}} Platform check has failed</h4>
+                <img src="assets/images/cross.png" class="validation-image-large">
+              </div>
+              <div class="modal-body">
+                <h5>Remote to server {{env.server}} and check the following services</h5>
+                <div *ngFor="let component of failedComponents;">
+                  <li>{{component.serviceName}}</li>
+                </div>
+              </div>
+            </div>
+  
+            <ng-template #success>
+              <div class="modal-header">
+                <h4 class="modal-title">{{env.environment}} Platform Success</h4>
+                <img src="assets/images/tick.png" class="validation-image-large">
+              </div>
+  
+              <div class="modal-body">
+                <p>License Server and all queryable components are available</p>
+              </div>
+            </ng-template>
+          </div>
+          <ng-template #modalLoading>
+            <div class="modal-header">
+              <h4 class="modal-title">Loading</h4>
+            </div>
+            <div class="modal-body">
+              <p>
+                <ngb-progressbar value="500" type="info"></ngb-progressbar>
+              </p>
+            </div>
+          </ng-template>
+          <!--Everybody gets a close-->
+          <div class="modal-footer">
+            <button type="button" class="btn btn-outline-dark" (click)="c('Close click')">Close</button>
+          </div>
+        </ng-template>
+  
+      </ng-template>
+  
+  
+  
+    </ngb-tab>
+  </ngb-tabset>
+  
+  <ng-template #loading>
+    <h3>Loading Configuration Data</h3>
+  </ng-template>

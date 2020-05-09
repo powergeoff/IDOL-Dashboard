@@ -1,0 +1,92 @@
+<div class="jumbotron">
+    <div class="row ">
+      <div class="col">
+        <h3>{{title}}</h3>
+      </div>
+    </div>
+  </div>
+
+<form [formGroup]="idolRequestForm" (ngSubmit)="searchButton()">
+    <div class="row">
+        <div class=""> 
+            <p>Settings:</p>
+        </div>
+        <div class="col">
+            <select class="form-control" (change)="changeEnvironment($event.target.value)" formControlName="environment">
+                <option *ngFor="let env of envList" [value]="env">{{env}}</option>
+            </select>
+        </div>
+        <div class="col">
+            <select class="form-control" (change)="changeInstance($event.target.value)" formControlName="install">
+                <option *ngFor="let i of instanceList" [value]="i">{{ i }}</option>
+            </select>
+        </div>
+
+        <div class="col">
+            <select class="form-control" formControlName="database">
+                <option *ngFor="let db of databaseList" [value]="db">{{ db }}</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="row">
+        <p>Text:</p>
+        <div class="col">
+            <input type="text" class="form-control" placeholder="*" formControlName="text">
+        </div>
+        <p>Print Fields:</p>
+        <div class="col">
+            <input type="text" class="form-control" placeholder="field1,field2 etc..." formControlName="printFields">
+        </div>
+
+        <p>Field Text:</p>
+        <div class="col">
+            <input type="text" class="form-control" placeholder="MATCH{}:pageType etc..." formControlName="fieldText">
+        </div>
+    </div>
+
+    <div class="row">
+        <p>URL Exists in DB:</p>
+        <div class="col">
+            <input type="text" class="form-control" placeholder="" formControlName="urlExists">
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col">
+            <input class="btn btn-primary submitRight" type="submit">
+        </div>
+    </div>
+</form>
+<!-- centersanddepartments,pagetype -->
+<!-- MATCH{article}:pagetype -->
+<div class="results" *ngIf="response; else loading">
+    <div class="row">Results: {{response.NumberOfHits}}</div>
+    <div *ngFor="let hit of response.Hits" >
+        <div class="row" >
+            <a href="{{hit.Reference}}" target="_blank">Id:{{hit.Id}} - {{ hit.Title }}</a>
+        </div>
+        <div class="row">{{hit.Summary}}</div>
+        <div class="printFields" *ngFor="let field of hit.Fields">
+            <div class="row">
+                <b>{{field.Key}} = {{field.Value}}</b>
+            </div>
+        </div>
+        <hr />
+    </div>
+
+    <div class="row">
+        <div class="col">
+        <ngb-pagination [boundaryLinks]="true" 
+            (pageChange)="pageChange($event)" [maxSize]="10" [rotate]="true" 
+            [collectionSize]="response.NumberOfHits" [pageSize]="itemsPerPage"
+            [(page)]="page" aria-label="Default pagination">
+        </ngb-pagination>
+        </div>
+      </div>
+
+</div>
+
+
+<ng-template #loading>
+</ng-template>

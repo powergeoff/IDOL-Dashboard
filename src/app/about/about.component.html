@@ -1,0 +1,51 @@
+<div class="jumbotron">
+  <h3>{{title}}</h3>
+</div>
+
+<div class="row">
+  <div class="col">
+    <h3>Platform Check Page</h3>
+    <p>This tool allows a user to quickly determine if the <i>necessary</i> IDOL components are up and running at any given time. It could be useful after an ISM or any time there has been maintenance done to the environment. All of the environments are displayed in tabular format but we only need to check Production.
+    The necessary components are License Server plus any component like Content Server that is relied upon to serve results to our supported sites.</p>
+    <p>Each environment/ server for IDOL is displayed in tabs.</p>
+    <p>Within each tab you will see a list of IDOL components that must be up and running.</p>
+    <p>To test the environment, click the blue button <input type="button" value="Check environment IDOL Status" class="btn btn-primary" /> on the lower left of the screen to check if the License Server and Queryable Ports are available.</p>
+    <p>A dialog will show the results along with either a check
+      <img class="validation-image" src="assets/images/tick.png"> for success or cross
+      <img class="validation-image" src="assets/images/cross.png"> for failure.</p>
+    <p>If a component fails to respond, the service name on that machine is displayed.</p>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col">
+    Click the <input type="button" value="View environment Details" class="btn btn-outline-secondary" /> button on the lower right side of the screen to see all installed components for IDOL on that particular
+    server. It is NOT necessary to view the details after running a successful check.
+  </div>
+</div>
+
+
+<div class="row">
+  <div class="col">
+    <h3>Details Page</h3>
+    <p>This page provides detailed information for all installed IDOL components on a given machine.</p>
+    <p>There are tabs for each IDOL installation on the server. The page acts as documentation of all installations and necessary details for every component installed across all IDOL environments.</p>
+    <p>It also shows whether the component is active or not.</p>
+    <p>The <ng-template #popLicenseContent>
+      <b>Service name: </b><i>Service name on machine</i>
+      <br />
+      <b>Executable Path: </b><i>Executable path on machine</i>
+    </ng-template>
+    <button type="button" class="btn btn-secondary" placement="right" popoverTitle="License Server Details" [ngbPopover]="popLicenseContent">
+      License Server
+    </button> button at the top right of the page displays the service name and executable path in a pop-over of the machine's unique License Server that applies to all installs on the machine.</p>
+    <p>Each installed component* displays either a <span class="badge badge-primary badge-pill">
+      <img class="validation-image-small" src='assets/images/check.png' alt='status'>
+    </span> for components that are up and running or an  <span class="badge badge-secondary badge-pill">
+      <span class="validation-image-small">X</span>
+    </span> for components that are not along with an accordion to display a link to the component's Admin UI and details for each
+      component's executable file path and service name on the machine. This would help troubleshoot any component that is not responding.</p>
+    
+    <P>*The <i>Find Admin and Data Admin</i> components cannot be queried like the others so they do not display a check or a cross. To verify they are up and running, go to there respective Admin UI links or check their services on the server.</P>
+  </div>
+</div>

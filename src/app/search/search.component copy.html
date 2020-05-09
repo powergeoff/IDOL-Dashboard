@@ -1,0 +1,54 @@
+<div class="jumbotron">
+    <div class="row ">
+      <div class="col">
+        <h3>{{title}}</h3>
+      </div>
+    </div>
+  </div>
+
+<form>
+    <div class="row">
+        <div class=""> 
+            <p>Settings:</p>
+        </div>
+        <div class="col">
+            <select class="form-control" (change)="onEnvChange($event.target.value)">
+                <option [selected]="environment" *ngFor="let env of config">{{env.environment}}</option>
+            </select>
+        </div>
+        <div class="col">
+            <select class="form-control" (change)="onInstanceChange($event.target.value)">
+                <option [value]="instance" *ngFor="let i of instanceList">{{ i }}</option>
+            </select>
+        </div>
+
+        <div class="col">
+            <select class="form-control">
+                <option *ngFor="let db of databaseList">{{ db }}</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="row">
+        <p>Text:</p>
+        <div class="col">
+            <input type="text" class="form-control" placeholder="*">
+        </div>
+        <p>Print Fields:</p>
+        <div class="col">
+            <input type="text" class="form-control" placeholder="field1,field2 etc...">
+        </div>
+
+        <p>Field Text:</p>
+        <div class="col">
+            <input type="text" class="form-control" placeholder="MATCH{}:pageType etc...">
+        </div>
+    </div>
+
+    <div class="row">
+        <p>URL Exists in DB:</p>
+        <div class="col">
+            <input type="text" class="form-control" placeholder="">
+        </div>
+    </div>
+</form>

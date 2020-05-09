@@ -1,0 +1,1256 @@
+[
+    {
+        "environment": "Production",
+        "server": "myserver2183",
+        "licenseServer": {
+            "name": "License",
+            "mainPort": 20000,
+            "isActive": true,
+            "isQueryable": false,
+            "executablePath": "F:\\IDOL\\licenseserver\\licenseserver.exe",
+            "serviceName": "IDOL-LicenseServer"
+        },
+        "instances": [
+            {
+                "name": "Main",
+                "components": [
+                    {
+                        "name": "Content",
+                        "mainPort": 9100,
+                        "isActive": true,
+                        "isQueryable": true,
+                        "executablePath": "F:\\IDOL\\content\\content.exe",
+                        "serviceName": "IDOL-Content"
+                    },
+                    {
+                        "name": "DIH",
+                        "mainPort": 9070,
+                        "isActive": true,
+                        "isQueryable": false,
+                        "executablePath": "F:\\IDOL\\dih\\dih.exe",
+                        "serviceName": "IDOL-DIH"
+                    },
+		    {
+                        "name": "QMS",
+                        "mainPort": 18100,
+                        "isActive": true,
+                        "isQueryable": true,
+                        "executablePath": "F:\\IDOL\\qms/qms.exe",
+                        "serviceName": "IDOL-QMS"
+                    },
+                    {
+                        "name": "Agent Store",
+                        "mainPort": 18150,
+                        "isActive": true,
+                        "isQueryable": true,
+                        "executablePath": "F:\\IDOL\\agentstore/agentstore.exe",
+                        "serviceName": "IDOL-AgentStore"
+                    },
+                    {
+                        "name": "CFS",
+                        "mainPort": 7100,
+                        "isActive": true,
+                        "isQueryable": false,
+                        "executablePath": "F:\\IDOL\\cfs\\cfs.exe",
+                        "serviceName": "IDOL-CFS"
+                    },
+                    {
+                        "name": "FSC",
+                        "mainPort": 7000,
+                        "isActive": true,
+                        "isQueryable": false,
+                        "executablePath": "F:\\IDOL\\filesystemconnector\\filesystemconnector.exe",
+                        "serviceName": "IDOL-FileSystemConnector"
+                    },
+                    {
+                        "name": "WebConnector Main",
+                        "mainPort": 8000,
+                        "isActive": true,
+                        "isQueryable": false,
+                        "executablePath": "F:\\IDOL\\webconnector\\webconnector.exe",
+                        "serviceName": "IDOL-WebConnector"
+                    },
+                    {
+                        "name": "WebConnector Priority",
+                        "mainPort": 8100,
+                        "isActive": false,
+                        "isQueryable": false,
+                        "executablePath": "F:\\IDOL\\webconnectorpriority\\webconnector.exe",
+                        "serviceName": "IDOL-WebConnectorPriority"
+                    }
+                ]
+            },
+            {
+                "name": "Reports",
+                "components": [
+                    {
+                        "name": "Content",
+                        "mainPort": 9200,
+                        "isActive": true,
+                        "isQueryable": true,
+                        "executablePath": "F:\\Reports\\content\\content.exe",
+                        "serviceName": "IDOL-ContentReports"
+                    },
+                    {
+                        "name": "DIH",
+                        "mainPort": 9570,
+                        "isActive": true,
+                        "isQueryable": false,
+                        "executablePath": "F:\\Reports\\dih\\dih.exe",
+                        "serviceName": "IDOL-DIHReports"
+                    }
+                ]
+            },
+	    {
+                "name": "INS-1",
+                "adminComponents": [
+                    {
+                        "name": "Data Admin",
+                        "mainPort": 9780,
+                        "executablePath": "F:\\IDOL\\INS-1\\dataadmin\\dataadmin.exe",
+                        "serviceName": "INS-1-DataAdmin"
+                    },
+                    {
+                        "name": "Find",
+                        "mainPort": 9785,
+                        "executablePath": "F:\\IDOL\\INS-1\\find\\find.exe",
+                        "serviceName": "INS-1-Find"
+                    }
+                ],
+                "components": [
+                    {
+                        "name": "Content",
+                        "mainPort": 9700,
+                        "isActive": true,
+                        "isQueryable": true,
+                        "executablePath": "F:\\IDOL\\INS-1/content/content.exe",
+                        "serviceName": "INS-1-Content"
+                    },
+                    {
+                        "name": "QMS",
+                        "mainPort": 9720,
+                        "isActive": true,
+                        "isQueryable": true,
+                        "executablePath": "F:\\IDOL\\INS-1/qms/qms.exe",
+                        "serviceName": "INS-1-QMS"
+                    },
+                    {
+                        "name": "DIH",
+                        "mainPort": 9710,
+                        "isActive": true,
+                        "isQueryable": false,
+                        "executablePath": "F:\\IDOL\\INS-1/dih/dih.exe",
+                        "serviceName": "INS-1-DIH"
+                    },
+                    {
+                        "name": "DAH",
+                        "mainPort": 9715,
+                        "isActive": true,
+                        "isQueryable": true,
+                        "executablePath": "F:\\IDOL\\INS-1/dah/dah.exe",
+                        "serviceName": "INS-1-DAH"
+                    },
+                    {
+                        "name": "CFS",
+                        "mainPort": 9705,
+                        "isActive": true,
+                        "isQueryable": false,
+                        "executablePath": "F:\\IDOL\\INS-1/cfs/cfs.exe",
+                        "serviceName": "INS-1-CFS"
+                    },
+                    {
+                        "name": "WebConnector",
+                        "mainPort": 9735,
+                        "isActive": true,
+                        "isQueryable": false,
+                        "executablePath": "F:\\IDOL\\INS-1/webconnector/webconnector.exe",
+                        "serviceName": "INS-1-WebConnector"
+                    },
+                    {
+                        "name": "ODBC",
+                        "mainPort": 9740,
+                        "isActive": true,
+                        "isQueryable": false,
+                        "executablePath": "F:\\IDOL\\INS-1\\odbc/ODBCConnector.exe",
+                        "serviceName": "INS-1-ODBC"
+                    },
+                    {
+                        "name": "Agent Store",
+                        "mainPort": 9730,
+                        "isActive": true,
+                        "isQueryable": true,
+                        "executablePath": "F:\\IDOL\\INS-1/agentstore/agentstore.exe",
+                        "serviceName": "INS-1-AgentStore"
+                    },
+                    {
+                        "name": "Stats Server",
+                        "mainPort": 9725,
+                        "isActive": true,
+                        "isQueryable": false,
+                        "executablePath": "F:\\IDOL\\INS-1/statsserver/statsserver.exe",
+                        "serviceName": "INS-1-StatsServer"
+                    }
+                ]
+            },
+            {
+                "name": "INS-2",
+                "adminComponents": [
+                    {
+                        "name": "Data Admin",
+                        "mainPort": 8080,
+                        "executablePath": "F:\\IDOL\\INS-2\\dataadmin\\dataadmin.exe",
+                        "serviceName": "IDOL-INS-2-DataAdmin"
+                    },
+                    {
+                        "name": "Find",
+                        "mainPort": 8180,
+                        "executablePath": "F:\\IDOL\\INS-2\\find\\find.exe",
+                        "serviceName": "IDOL-INS-2-Find"
+                    }
+                ],
+                "components": [
+                    {
+                        "name": "Content",
+                        "mainPort": 9300,
+                        "isActive": true,
+                        "isQueryable": true,
+                        "executablePath": "F:\\IDOL\\INS-2/content/content.exe",
+                        "serviceName": "IDOL-INS-2-Content"
+                    },
+                    {
+                        "name": "QMS",
+                        "mainPort": 18000,
+                        "isActive": true,
+                        "isQueryable": true,
+                        "executablePath": "F:\\IDOL\\INS-2/qms/qms.exe",
+                        "serviceName": "IDOL-INS-2-QMS"
+                    },
+                    {
+                        "name": "DIH",
+                        "mainPort": 9170,
+                        "isActive": true,
+                        "isQueryable": false,
+                        "executablePath": "F:\\IDOL\\INS-2/dih/dih.exe",
+                        "serviceName": "IDOL-INS-2-DIH"
+                    },
+                    {
+                        "name": "DAH",
+                        "mainPort": 9060,
+                        "isActive": true,
+                        "isQueryable": true,
+                        "executablePath": "F:\\IDOL\\INS-2/dah/dah.exe",
+                        "serviceName": "IDOL-INS-2-DAH"
+                    },
+                    {
+                        "name": "CFS",
+                        "mainPort": 7200,
+                        "isActive": true,
+                        "isQueryable": false,
+                        "executablePath": "F:\\IDOL\\INS-2/cfs/cfs.exe",
+                        "serviceName": "IDOL-INS-2-CFS"
+                    },
+                    {
+                        "name": "WebConnector",
+                        "mainPort": 8500,
+                        "isActive": true,
+                        "isQueryable": false,
+                        "executablePath": "F:\\IDOL\\INS-2/webconnector/webconnector.exe",
+                        "serviceName": "IDOL-INS-2-WebConnector"
+                    },
+                    {
+                        "name": "Agent Store",
+                        "mainPort": 9050,
+                        "isActive": true,
+                        "isQueryable": true,
+                        "executablePath": "F:\\IDOL\\INS-2/agentstore/agentstore.exe",
+                        "serviceName": "IDOL-INS-2-AgentStore"
+                    },
+                    {
+                        "name": "Community",
+                        "mainPort": 9030,
+                        "isActive": true,
+                        "isQueryable": false,
+                        "executablePath": "F:\\IDOL\\INS-2/community/community.exe",
+                        "serviceName": "IDOL-INS-2-Community"
+                    },
+                    {
+                        "name": "View",
+                        "mainPort": 9080,
+                        "isActive": true,
+                        "isQueryable": false,
+                        "executablePath": "F:\\IDOL\\INS-2/view/view.exe",
+                        "serviceName": "IDOL-INS-2-View"
+                    },
+                    {
+                        "name": "Stats Server",
+                        "mainPort": 19000,
+                        "isActive": true,
+                        "isQueryable": false,
+                        "executablePath": "F:\\IDOL\\INS-2/statsserver/statsserver.exe",
+                        "serviceName": "IDOL-INS-2-StatsServer"
+                    }
+                ]
+            },
+            {
+                "name": "Tip Sheets",
+                "adminComponents": [
+                    {
+                        "name": "Data Admin",
+                        "mainPort": 9680,
+                        "executablePath": "F:\\IDOL\\TS\\dataadmin\\dataadmin.exe",
+                        "serviceName": "MF-TS-DataAdmin"
+                    }
+                ],
+                "components": [
+                    {
+                        "name": "Content",
+                        "mainPort": 9600,
+                        "isActive": true,
+                        "isQueryable": true,
+                        "executablePath": "F:\\IDOL\\TS/content/content.exe",
+                        "serviceName": "MF-TS-Content"
+                    },
+                    {
+                        "name": "QMS",
+                        "mainPort": 9620,
+                        "isActive": true,
+                        "isQueryable": true,
+                        "executablePath": "F:\\IDOL\\TS/qms/qms.exe",
+                        "serviceName": "MF-TS-QMS"
+                    },
+                    {
+                        "name": "DIH",
+                        "mainPort": 9610,
+                        "isActive": true,
+                        "isQueryable": false,
+                        "executablePath": "F:\\IDOL\\TS/dih/dih.exe",
+                        "serviceName": "MF-TS-DIH"
+                    },
+                    {
+                        "name": "DAH",
+                        "mainPort": 9615,
+                        "isActive": true,
+                        "isQueryable": true,
+                        "executablePath": "F:\\IDOL\\TS/dah/dah.exe",
+                        "serviceName": "MF-TS-DAH"
+                    },
+                    {
+                        "name": "CFS",
+                        "mainPort": 9605,
+                        "isActive": true,
+                        "isQueryable": false,
+                        "executablePath": "F:\\IDOL\\TS/cfs/cfs.exe",
+                        "serviceName": "MF-TS-CFS"
+                    },
+                    {
+                        "name": "FSC",
+                        "mainPort": 9650,
+                        "isActive": true,
+                        "isQueryable": false,
+                        "executablePath": "F:\\IDOL\\TS/filesystemconnector/filesystemconnector.exe",
+                        "serviceName": "MF-TS-FileSystemConnector"
+                    },
+                    {
+                        "name": "Agent Store",
+                        "mainPort": 9630,
+                        "isActive": true,
+                        "isQueryable": false,
+                        "executablePath": "F:\\IDOL\\TS/agentstore/agentstore.exe",
+                        "serviceName": "MF-TS-AgentStore"
+                    },
+                    {
+                        "name": "Community",
+                        "mainPort": 9640,
+                        "isActive": true,
+                        "isQueryable": false,
+                        "executablePath": "F:\\IDOL\\TS/community/community.exe",
+                        "serviceName": "MF-TS-Community"
+                    },
+                    {
+                        "name": "View",
+                        "mainPort": 9645,
+                        "isActive": true,
+                        "isQueryable": false,
+                        "executablePath": "F:\\IDOL\\TS/view/view.exe",
+                        "serviceName": "MF-TS-View"
+                    },
+                    {
+                        "name": "Stats Server",
+                        "mainPort": 9625,
+                        "isActive": true,
+                        "isQueryable": false,
+                        "executablePath": "F:\\IDOL\\TS/statsserver/statsserver.exe",
+                        "serviceName": "MF-TS-StatsServer"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "environment": "Backup",
+        "server": "myserver2181",
+        "licenseServer": {
+            "name": "License",
+            "mainPort": 20000,
+            "isActive": true,
+            "isQueryable": false,
+            "executablePath": "F:\\IDOL\\licenseserver\\licenseserver.exe",
+            "serviceName": "IDOL-LicenseServer"
+        },
+        "instances": [
+            {
+                "name": "Main",
+                "components": [
+                    {
+                        "name": "Content",
+                        "mainPort": 9100,
+                        "isActive": true,
+                        "isQueryable": true,
+                        "executablePath": "F:\\IDOL\\content\\content.exe",
+                        "serviceName": "IDOL-Content"
+                    },
+                    {
+                        "name": "CFS",
+                        "mainPort": 7100,
+                        "isActive": false,
+                        "executablePath": "F:\\IDOL\\cfs\\cfs.exe",
+                        "serviceName": "IDOL-CFS"
+                    },
+                    {
+                        "name": "FSC",
+                        "mainPort": 7000,
+                        "isActive": false,
+                        "executablePath": "F:\\IDOL\\filesystemconnector\\filesystemconnector.exe",
+                        "serviceName": "IDOL-FileSystemConnector"
+                    },
+                    {
+                        "name": "WebConnector Main",
+                        "mainPort": 8000,
+                        "isActive": false,
+                        "executablePath": "F:\\IDOL\\webconnector\\webconnector.exe",
+                        "serviceName": "IDOL-WebConnector"
+                    }
+                ]
+            },
+            {
+                "name": "Reports",
+                "components": [
+                    {
+                        "name": "Content",
+                        "mainPort": 9200,
+                        "isActive": true,
+                        "isQueryable": true,
+                        "executablePath": "F:\\IDOL-Reports\\content\\content.exe",
+                        "serviceName": "IDOL-ContentReports"
+                    },
+                    {
+                        "name": "DIH",
+                        "mainPort": 9570,
+                        "isActive": false,
+                        "executablePath": "F:\\IDOL-Reports\\dih\\dih.exe",
+                        "serviceName": "IDOL-DIHReports"
+                    }
+                ]
+            },
+            {
+                "name": "INS-1",
+                "components": [
+                    {
+                        "name": "Content",
+                        "mainPort": 9700,
+                        "isActive": true,
+                        "isQueryable": true,
+                        "executablePath": "F:\\IDOL-Reports\\content\\content.exe",
+                        "serviceName": "IDOL-ContentReports"
+                    }
+                ]
+            },
+            {
+                "name": "INS-2",
+                "components": [
+                    {
+                        "name": "Content",
+                        "mainPort": 9300,
+                        "isActive": true,
+                        "isQueryable": true,
+                        "executablePath": "F:\\IDOL\\INS-2/content/content.exe",
+                        "serviceName": "IDOL-INS-2-Content"
+                    },
+                    {
+                        "name": "QMS",
+                        "mainPort": 18000,
+                        "isActive": false,
+                        "isQueryable": true,
+                        "executablePath": "F:\\IDOL\\INS-2/qms/qms.exe",
+                        "serviceName": "IDOL-INS-2-QMS"
+                    },
+                    {
+                        "name": "DAH",
+                        "mainPort": 9060,
+                        "isActive": false,
+                        "isQueryable": true,
+                        "executablePath": "F:\\IDOL\\INS-2/dah/dah.exe",
+                        "serviceName": "IDOL-INS-2-DAH"
+                    },
+                    {
+                        "name": "Agent Store",
+                        "mainPort": 9050,
+                        "isActive": false,
+                        "executablePath": "F:\\IDOL\\INS-2/agentstore/agentstore.exe",
+                        "serviceName": "IDOL-INS-2-AgentStore"
+                    }
+                ]
+            },{
+                "name": "Tip Sheets",
+                "components": [
+                    {
+                        "name": "Content",
+                        "mainPort": 9600,
+                        "isActive": true,
+                        "isQueryable": true,
+                        "executablePath": "F:\\IDOL\\TS/content/content.exe",
+                        "serviceName": "MF-TS-Content"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "environment": "Stage",
+        "server": "myserver2179",
+        "licenseServer": {
+            "name": "License",
+            "mainPort": 20000,
+            "isActive": true,
+            "isQueryable": false,
+            "executablePath": "F:\\IDOL\\licenseserver\\licenseserver.exe",
+            "serviceName": "IDOL-LicenseServer"
+        },
+        "instances": [
+            {
+                "name": "Main",
+                "components": [
+                    {
+                        "name": "Content",
+                        "mainPort": 9100,
+                        "isActive": true,
+                        "isQueryable": true,
+                        "executablePath": "F:\\IDOL\\content\\content.exe",
+                        "serviceName": "IDOL-Content"
+                    },
+                    {
+                        "name": "DIH",
+                        "mainPort": 9070,
+                        "isActive": true,
+                        "isQueryable": false,
+                        "executablePath": "F:\\IDOL\\dih\\dih.exe",
+                        "serviceName": "IDOL-DIH"
+                    },
+                    {
+                        "name": "DAH",
+                        "mainPort": 9160,
+                        "isActive": false,
+                        "isQueryable": true,
+                        "executablePath": "F:\\IDOL\\dah\\dah.exe",
+                        "serviceName": "IDOL-DAH"
+                    },
+		            {
+                        "name": "QMS",
+                        "mainPort": 18100,
+                        "isActive": true,
+                        "isQueryable": true,
+                        "executablePath": "F:\\IDOL\\qms/qms.exe",
+                        "serviceName": "IDOL-QMS"
+                    },
+                    {
+                        "name": "Agent Store",
+                        "mainPort": 18150,
+                        "isActive": true,
+                        "isQueryable": true,
+                        "executablePath": "F:\\IDOL\\agentstore/agentstore.exe",
+                        "serviceName": "IDOL-AgentStore"
+                    },
+                    {
+                        "name": "CFS",
+                        "mainPort": 7100,
+                        "isActive": true,
+                        "isQueryable": false,
+                        "executablePath": "F:\\IDOL\\cfs\\cfs.exe",
+                        "serviceName": "IDOL-CFS"
+                    },
+                    {
+                        "name": "FSC",
+                        "mainPort": 7000,
+                        "isActive": true,
+                        "isQueryable": false,
+                        "executablePath": "F:\\IDOL\\filesystemconnector\\filesystemconnector.exe",
+                        "serviceName": "IDOL-FileSystemConnector"
+                    },
+                    {
+                        "name": "WebConnector",
+                        "mainPort": 8000,
+                        "isActive": true,
+                        "isQueryable": false,
+                        "executablePath": "F:\\IDOL\\webconnector\\webconnector.exe",
+                        "serviceName": "IDOL-WebConnector"
+                    }
+                ]
+            },	    
+	    {
+                "name": "INS-1",
+                "adminComponents": [
+                    {
+                        "name": "Data Admin",
+                        "mainPort": 9780,
+                        "executablePath": "F:\\IDOL\\INS-1\\dataadmin\\dataadmin.exe",
+                        "serviceName": "INS-1-DataAdmin"
+                    },
+                    {
+                        "name": "Find",
+                        "mainPort": 9785,
+                        "executablePath": "F:\\IDOL\\INS-1\\find\\find.exe",
+                        "serviceName": "INS-1-Find"
+                    }
+                ],
+                "components": [
+                    {
+                        "name": "Content",
+                        "mainPort": 9700,
+                        "isActive": true,
+                        "isQueryable": true,
+                        "executablePath": "F:\\IDOL\\INS-1/content/content.exe",
+                        "serviceName": "INS-1-Content"
+                    },
+                    {
+                        "name": "QMS",
+                        "mainPort": 9720,
+                        "isActive": true,
+                        "isQueryable": true,
+                        "executablePath": "F:\\IDOL\\INS-1/qms/qms.exe",
+                        "serviceName": "INS-1-QMS"
+                    },
+                    {
+                        "name": "DIH",
+                        "mainPort": 9710,
+                        "isActive": true,
+                        "isQueryable": false,
+                        "executablePath": "F:\\IDOL\\INS-1/dih/dih.exe",
+                        "serviceName": "INS-1-DIH"
+                    },
+                    {
+                        "name": "DAH",
+                        "mainPort": 9715,
+                        "isActive": true,
+                        "isQueryable": true,
+                        "executablePath": "F:\\IDOL\\INS-1/dah/dah.exe",
+                        "serviceName": "INS-1-DAH"
+                    },
+                    {
+                        "name": "CFS",
+                        "mainPort": 9705,
+                        "isActive": true,
+                        "isQueryable": false,
+                        "executablePath": "F:\\IDOL\\INS-1/cfs/cfs.exe",
+                        "serviceName": "INS-1-CFS"
+                    },
+                    {
+                        "name": "WebConnector",
+                        "mainPort": 9735,
+                        "isActive": true,
+                        "isQueryable": false,
+                        "executablePath": "F:\\IDOL\\INS-1/webconnector/webconnector.exe",
+                        "serviceName": "INS-1-WebConnector"
+                    },
+                    {
+                        "name": "ODBC",
+                        "mainPort": 9740,
+                        "isActive": true,
+                        "isQueryable": false,
+                        "executablePath": "F:\\IDOL\\INS-1\\odbc/ODBCConnector.exe",
+                        "serviceName": "INS-1-ODBC"
+                    },
+                    {
+                        "name": "Agent Store",
+                        "mainPort": 9730,
+                        "isActive": true,
+                        "isQueryable": true,
+                        "executablePath": "F:\\IDOL\\INS-1/agentstore/agentstore.exe",
+                        "serviceName": "INS-1-AgentStore"
+                    },
+                    {
+                        "name": "Stats Server",
+                        "mainPort": 9725,
+                        "isActive": true,
+                        "isQueryable": false,
+                        "executablePath": "F:\\IDOL\\INS-1/statsserver/statsserver.exe",
+                        "serviceName": "INS-1-StatsServer"
+                    }
+                ]
+            },
+            {
+                "name": "INS-2",
+                "adminComponents": [
+                    {
+                        "name": "Data Admin",
+                        "mainPort": 8080,
+                        "executablePath": "F:\\IDOL\\INS-2\\datadmin\\dataadmin.exe",
+                        "serviceName": "IDOL-INS-2-DataAdmin"
+                    },
+                    {
+                        "name": "Find",
+                        "mainPort": 8180,
+                        "executablePath": "F:\\IDOL\\INS-2\find\find.exe",
+                        "serviceName": "IDOL-INS-2-Find"
+                    }
+                ],
+                "components": [
+                    {
+                        "name": "Content",
+                        "mainPort": 9300,
+                        "isActive": true,
+                        "isQueryable": true,
+                        "executablePath": "F:\\IDOL\\INS-2/content/content.exe",
+                        "serviceName": "IDOL-INS-2-Content"
+                    },
+                    {
+                        "name": "QMS",
+                        "mainPort": 18000,
+                        "isActive": true,
+                        "isQueryable": true,
+                        "executablePath": "F:\\IDOL\\INS-2/qms/qms.exe",
+                        "serviceName": "IDOL-INS-2-QMS"
+                    },
+                    {
+                        "name": "DIH",
+                        "mainPort": 9170,
+                        "isActive": true,
+                        "isQueryable": false,
+                        "executablePath": "F:\\IDOL\\INS-2/dih/dih.exe",
+                        "serviceName": "IDOL-INS-2-DIH"
+                    },
+                    {
+                        "name": "DAH",
+                        "mainPort": 9060,
+                        "isActive": true,
+                        "isQueryable": true,
+                        "executablePath": "F:\\IDOL\\INS-2/dah/dah.exe",
+                        "serviceName": "IDOL-INS-2-DAH"
+                    },
+                    {
+                        "name": "CFS",
+                        "mainPort": 7200,
+                        "isActive": true,
+                        "isQueryable": false,
+                        "executablePath": "F:\\IDOL\\INS-2/cfs/cfs.exe",
+                        "serviceName": "IDOL-INS-2-CFS"
+                    },
+                    {
+                        "name": "WebConnector",
+                        "mainPort": 8500,
+                        "isActive": true,
+                        "isQueryable": false,
+                        "executablePath": "F:\\IDOL\\INS-2/webconnector/webconnector.exe",
+                        "serviceName": "IDOL-INS-2-WebConnector"
+                    },
+                    {
+                        "name": "Agent Store",
+                        "mainPort": 9050,
+                        "isActive": true,
+                        "isQueryable": false,
+                        "executablePath": "F:\\IDOL\\INS-2/agentstore/agentstore.exe",
+                        "serviceName": "IDOL-INS-2-AgentStore"
+                    },
+                    {
+                        "name": "Community",
+                        "mainPort": 9030,
+                        "isActive": true,
+                        "isQueryable": false,
+                        "executablePath": "F:\\IDOL\\INS-2/community/community.exe",
+                        "serviceName": "IDOL-INS-2-Community"
+                    },
+                    {
+                        "name": "Stats",
+                        "mainPort": 19000,
+                        "isActive": true,
+                        "isQueryable": false,
+                        "executablePath": "F:\\IDOL\\INS-2\\statsserver\\statsserver.exe",
+                        "serviceName": "IDOL-INS-2-StatsServer"
+                    },
+                    {
+                        "name": "View",
+                        "mainPort": 9080,
+                        "isActive": true,
+                        "isQueryable": false,
+                        "executablePath": "F:\\IDOL\\INS-2/view/view.exe",
+                        "serviceName": "IDOL-INS-2-View"
+                    }
+                ]
+            },
+            {
+                "name": "Tip Sheets",
+                "adminComponents": [
+                    {
+                        "name": "Data Admin",
+                        "mainPort": 9680,
+                        "executablePath": "F:\\IDOL\\TS\\dataadmin\\dataadmin.exe",
+                        "serviceName": "MF-TS-DataAdmin"
+                    }
+                ],
+                "components": [
+                    {
+                        "name": "Content",
+                        "mainPort": 9600,
+                        "isActive": true,
+                        "isQueryable": true,
+                        "executablePath": "F:\\IDOL\\TS/content/content.exe",
+                        "serviceName": "MF-TS-Content"
+                    },
+                    {
+                        "name": "QMS",
+                        "mainPort": 9620,
+                        "isActive": true,
+                        "isQueryable": true,
+                        "executablePath": "F:\\IDOL\\TS/qms/qms.exe",
+                        "serviceName": "MF-TS-QMS"
+                    },
+                    {
+                        "name": "DIH",
+                        "mainPort": 9610,
+                        "isActive": true,
+                        "isQueryable": false,
+                        "executablePath": "F:\\IDOL\\TS/dih/dih.exe",
+                        "serviceName": "MF-TS-DIH"
+                    },
+                    {
+                        "name": "DAH",
+                        "mainPort": 9615,
+                        "isActive": true,
+                        "isQueryable": true,
+                        "executablePath": "F:\\IDOL\\TS/dah/dah.exe",
+                        "serviceName": "MF-TS-DAH"
+                    },
+                    {
+                        "name": "CFS",
+                        "mainPort": 9605,
+                        "isActive": true,
+                        "isQueryable": false,
+                        "executablePath": "F:\\IDOL\\TS/cfs/cfs.exe",
+                        "serviceName": "MF-TS-CFS"
+                    },
+                    {
+                        "name": "FSC",
+                        "mainPort": 9650,
+                        "isActive": true,
+                        "isQueryable": false,
+                        "executablePath": "F:\\IDOL\\TS/filesystemconnector/filesystemconnector.exe",
+                        "serviceName": "MF-TS-FileSystemConnector"
+                    },
+                    {
+                        "name": "Agent Store",
+                        "mainPort": 9630,
+                        "isActive": true,
+                        "isQueryable": false,
+                        "executablePath": "F:\\IDOL\\TS/agentstore/agentstore.exe",
+                        "serviceName": "MF-TS-AgentStore"
+                    },
+                    {
+                        "name": "Community",
+                        "mainPort": 9640,
+                        "isActive": true,
+                        "isQueryable": false,
+                        "executablePath": "F:\\IDOL\\TS/community/community.exe",
+                        "serviceName": "MF-TS-Community"
+                    },
+                    {
+                        "name": "View",
+                        "mainPort": 9645,
+                        "isActive": true,
+                        "isQueryable": false,
+                        "executablePath": "F:\\IDOL\\TS/view/view.exe",
+                        "serviceName": "MF-TS-View"
+                    },
+                    {
+                        "name": "Stats Server",
+                        "mainPort": 9625,
+                        "isActive": true,
+                        "isQueryable": false,
+                        "executablePath": "F:\\IDOL\\TS/statsserver/statsserver.exe",
+                        "serviceName": "MF-TS-StatsServer"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "environment": "Development",
+        "server": "myserver2177",
+        "licenseServer": {
+            "name": "License",
+            "mainPort": 20000,
+            "isActive": true,
+            "isQueryable": false,
+            "executablePath": "F:\\IDOL\\licenseserver\\licenseserver.exe",
+            "serviceName": "IDOL-LicenseServer"
+        },
+        "instances": [
+            {
+                "name": "Main",
+                "components": [
+                    {
+                        "name": "Content",
+                        "mainPort": 9100,
+                        "isActive": true,
+                        "isQueryable": true,
+                        "executablePath": "F:\\IDOL\\content\\content.exe",
+                        "serviceName": "IDOL-Content"
+                    },
+                    {
+                        "name": "DIH",
+                        "mainPort": 9070,
+                        "isActive": true,
+                        "isQueryable": false,
+                        "executablePath": "F:\\IDOL\\dih\\dih.exe",
+                        "serviceName": "IDOL-DIH"
+                    },
+                    {
+                        "name": "CFS",
+                        "mainPort": 7100,
+                        "isActive": true,
+                        "isQueryable": false,
+                        "executablePath": "F:\\IDOL\\cfs\\cfs.exe",
+                        "serviceName": "IDOL-CFS"
+                    },
+                    {
+                        "name": "FSC",
+                        "mainPort": 7000,
+                        "isActive": false,
+                        "isQueryable": false,
+                        "executablePath": "F:\\IDOL\\filesystemconnector\\filesystemconnector.exe",
+                        "serviceName": "IDOL-FileSystemConnector"
+                    },
+                    {
+                        "name": "WebConnector Main",
+                        "mainPort": 8000,
+                        "isActive": true,
+                        "isQueryable": false,
+                        "executablePath": "F:\\IDOL\\webconnector\\webconnector.exe",
+                        "serviceName": "IDOL-WebConnector"
+                    },
+                    {
+                        "name": "WebConnector INS-1",
+                        "mainPort": 8300,
+                        "isActive": true,
+                        "isQueryable": false,
+                        "executablePath": "F:\\IDOL\\webconnectorINS-1\\webconnector.exe",
+                        "serviceName": "IDOL-WebConnectorINS-1"
+                    },
+                    {
+                        "name": "WebConnector INS-2",
+                        "mainPort": 8200,
+                        "isActive": true,
+                        "isQueryable": false,
+                        "executablePath": "F:\\IDOL\\webconnectorINS-2\\webconnector.exe",
+                        "serviceName": "IDOL-WebConnectorINS-2"
+                    },
+                    {
+                        "name": "View",
+                        "mainPort": 9080,
+                        "isActive": true,
+                        "isQueryable": false,
+                        "executablePath": "F:\\IDOL4\\view\\view.exe",
+                        "serviceName": "IDOL-View"
+                    }
+                ]
+            },
+            {
+                "name": "Reports",
+                "components": [
+                    {
+                        "name": "Content",
+                        "mainPort": 9200,
+                        "isActive": true,
+                        "isQueryable": true,
+                        "executablePath": "F:\\IDOL Reports\\content\\content.exe",
+                        "serviceName": "IDOL-Content Reports"
+                    }
+                ]
+            },
+            {
+                "name": "INS-2",
+                "adminComponents": [
+                    {
+                        "name": "Data Admin",
+                        "mainPort": 8080,
+                        "executablePath": "F:\\IDOL\\INS-2\\dataadmin\\dataadmin.exe",
+                        "serviceName": "IDOL-INS-2-DataAdmin"
+                    },
+                    {
+                        "name": "Find",
+                        "mainPort": 8180,
+                        "executablePath": "F:\\IDOL-Find\\find\\find.exe",
+                        "serviceName": "IDOL-Find"
+                    }
+                ],
+                "components": [
+                    {
+                        "name": "Content",
+                        "mainPort": 9300,
+                        "isActive": true,
+                        "isQueryable": true,
+                        "executablePath": "F:\\IDOL\\INS-2/content/content.exe",
+                        "serviceName": "IDOL-INS-2-Content"
+                    },
+                    {
+                        "name": "QMS",
+                        "mainPort": 18000,
+                        "isActive": true,
+                        "isQueryable": true,
+                        "executablePath": "F:\\IDOL\\qms\\qms.exe",
+                        "serviceName": "IDOL-QMS"
+                    },
+                    {
+                        "name": "DIH",
+                        "mainPort": 9170,
+                        "isActive": true,
+                        "isQueryable": false,
+                        "executablePath": "F:\\IDOL\\INS-2/dih/dih.exe",
+                        "serviceName": "IDOL-INS-2-DIH"
+                    },
+                    {
+                        "name": "DAH",
+                        "mainPort": 9060,
+                        "isActive": true,
+                        "isQueryable": true,
+                        "executablePath": "F:\\IDOL\\dah\\dah.exe",
+                        "serviceName": "IDOL-DAH"
+                    },
+                    {
+                        "name": "CFS",
+                        "mainPort": 7200,
+                        "isActive": true,
+                        "isQueryable": false,
+                        "executablePath": "F:\\IDOL\\INS-2/cfs/cfs.exe",
+                        "serviceName": "IDOL-INS-2-CFS"
+                    },
+                    {
+                        "name": "WebConnector",
+                        "mainPort": 8500,
+                        "isActive": true,
+                        "isQueryable": false,
+                        "executablePath": "F:\\IDOL\\INS-2/webconnector/webconnector.exe",
+                        "serviceName": "IDOL-INS-2-WebConnector"
+                    },
+                    {
+                        "name": "Agent Store",
+                        "mainPort": 9050,
+                        "isActive": true,
+                        "isQueryable": false,
+                        "executablePath": "F:\\IDOL4\\agentstore\\agentstore.exe",
+                        "serviceName": "IDOL-AgentStore"
+                    },
+                    {
+                        "name": "Community",
+                        "mainPort": 9030,
+                        "isActive": true,
+                        "isQueryable": false,
+                        "executablePath": "F:\\IDOL4\\community\\community.exe",
+                        "serviceName": "IDOL-Community"
+                    },
+                    {
+                        "name": "Stats",
+                        "mainPort": 19000,
+                        "isActive": true,
+                        "isQueryable": false,
+                        "executablePath": "F:\\IDOL\\statsserver\\statsserver.exe",
+                        "serviceName": "IDOL-StatisticsServer"
+                    }
+                ]
+            },
+            {
+                "name": "Tip Sheets",
+                "adminComponents": [
+                    {
+                        "name": "Data Admin",
+                        "mainPort": 9680,
+                        "executablePath": "F:\\IDOL\\TS\\dataadmin\\dataadmin.exe",
+                        "serviceName": "MicroFocus-DataAdmin"
+                    }
+                ],
+                "components": [
+                    {
+                        "name": "Content",
+                        "mainPort": 9600,
+                        "isActive": true,
+                        "isQueryable": true,
+                        "executablePath": "F:\\IDOL\\TS/content/content.exe",
+                        "serviceName": "MicroFocus-Content"
+                    },
+                    {
+                        "name": "QMS",
+                        "mainPort": 9620,
+                        "isActive": true,
+                        "isQueryable": true,
+                        "executablePath": "F:\\IDOL\\TS/qms/qms.exe",
+                        "serviceName": "MicroFocus-QMS"
+                    },
+                    {
+                        "name": "DIH",
+                        "mainPort": 9610,
+                        "isActive": true,
+                        "isQueryable": false,
+                        "executablePath": "F:\\IDOL\\TS/dih/dih.exe",
+                        "serviceName": "MicroFocus-DIH"
+                    },
+                    {
+                        "name": "DAH",
+                        "mainPort": 9615,
+                        "isActive": true,
+                        "isQueryable": true,
+                        "executablePath": "F:\\IDOL\\TS/dah/dah.exe",
+                        "serviceName": "MicroFocus-DAH"
+                    },
+                    {
+                        "name": "CFS",
+                        "mainPort": 9605,
+                        "isActive": true,
+                        "isQueryable": false,
+                        "executablePath": "F:\\IDOL\\TS/cfs/cfs.exe",
+                        "serviceName": "MicroFocus-CFS"
+                    },
+                    {
+                        "name": "FSC",
+                        "mainPort": 9650,
+                        "isActive": true,
+                        "isQueryable": false,
+                        "executablePath": "F:\\IDOL\\TS/filesystemconnector/filesystemconnector.exe",
+                        "serviceName": "MicroFocus-FileSystemConnector"
+                    },
+                    {
+                        "name": "Agent Store",
+                        "mainPort": 9630,
+                        "isActive": true,
+                        "isQueryable": false,
+                        "executablePath": "F:\\IDOL\\TS/agentstore/agentstore.exe",
+                        "serviceName": "MicroFocus-AgentStore"
+                    },
+                    {
+                        "name": "Community",
+                        "mainPort": 9640,
+                        "isActive": true,
+                        "isQueryable": false,
+                        "executablePath": "F:\\IDOL\\TS/community/community.exe",
+                        "serviceName": "MicroFocus-Community"
+                    },
+                    {
+                        "name": "View",
+                        "mainPort": 9645,
+                        "isActive": true,
+                        "isQueryable": false,
+                        "executablePath": "F:\\IDOL\\TS/view/view.exe",
+                        "serviceName": "MicroFocus-View"
+                    },
+                    {
+                        "name": "Stats Server",
+                        "mainPort": 9625,
+                        "isActive": true,
+                        "isQueryable": false,
+                        "executablePath": "F:\\IDOL\\TS/statsserver/statsserver.exe",
+                        "serviceName": "MicroFocus-StatsServer"
+                    }
+                    
+                ]
+            },
+            {
+                "name": "INS-1",
+                "adminComponents": [
+                    {
+                        "name": "Data Admin",
+                        "mainPort": 9780,
+                        "executablePath": "F:\\IDOL\\INS-1\\dataadmin\\dataadmin.exe",
+                        "serviceName": "INS-1-DataAdmin"
+                    },
+                    {
+                        "name": "Find",
+                        "mainPort": 9785,
+                        "executablePath": "F:\\IDOL\\INS-1\\find\\find.exe",
+                        "serviceName": "INS-1-Find"
+                    }
+                ],
+                "components": [
+                    {
+                        "name": "Content",
+                        "mainPort": 9700,
+                        "isActive": true,
+                        "isQueryable": true,
+                        "executablePath": "F:\\IDOL\\INS-1/content/content.exe",
+                        "serviceName": "INS-1-Content"
+                    },
+                    {
+                        "name": "QMS",
+                        "mainPort": 9720,
+                        "isActive": true,
+                        "isQueryable": true,
+                        "executablePath": "F:\\IDOL\\INS-1/qms/qms.exe",
+                        "serviceName": "INS-1-QMS"
+                    },
+                    {
+                        "name": "DIH",
+                        "mainPort": 9710,
+                        "isActive": true,
+                        "isQueryable": false,
+                        "executablePath": "F:\\IDOL\\INS-1/dih/dih.exe",
+                        "serviceName": "INS-1-DIH"
+                    },
+                    {
+                        "name": "DAH",
+                        "mainPort": 9715,
+                        "isActive": true,
+                        "isQueryable": true,
+                        "executablePath": "F:\\IDOL\\INS-1/dah/dah.exe",
+                        "serviceName": "INS-1-DAH"
+                    },
+                    {
+                        "name": "CFS",
+                        "mainPort": 9705,
+                        "isActive": true,
+                        "isQueryable": false,
+                        "executablePath": "F:\\IDOL\\INS-1/cfs/cfs.exe",
+                        "serviceName": "INS-1-CFS"
+                    },
+                    {
+                        "name": "WebConnector",
+                        "mainPort": 9735,
+                        "isActive": true,
+                        "isQueryable": false,
+                        "executablePath": "F:\\IDOL\\INS-1/webconnector/webconnector.exe",
+                        "serviceName": "INS-1-WebConnector"
+                    },
+                    {
+                        "name": "ODBC",
+                        "mainPort": 9740,
+                        "isActive": true,
+                        "isQueryable": false,
+                        "executablePath": "F:\\IDOL\\INS-1\\odbc/ODBCConnector.exe",
+                        "serviceName": "INS-1-ODBC"
+                    },
+                    {
+                        "name": "Agent Store",
+                        "mainPort": 9730,
+                        "isActive": true,
+                        "isQueryable": true,
+                        "executablePath": "F:\\IDOL\\INS-1/agentstore/agentstore.exe",
+                        "serviceName": "INS-1-AgentStore"
+                    },
+                    {
+                        "name": "Stats Server",
+                        "mainPort": 9725,
+                        "isActive": true,
+                        "isQueryable": false,
+                        "executablePath": "F:\\IDOL\\INS-1/statsserver/statsserver.exe",
+                        "serviceName": "INS-1-StatsServer"
+                    }
+                ]
+            }
+        ]
+    }
+]

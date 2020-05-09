@@ -1,0 +1,103 @@
+<div *ngIf="config; else loading">
+    <div class="jumbotron">
+      <div class="row ">
+        <div class="col">
+          <h3>{{config.environment}} {{config.server | uppercase}}</h3>
+        </div>
+        <div class="col right">
+          <ng-template #popLicenseContent>
+            <b>Service name: </b>{{config.licenseServer.serviceName}}
+            <br />
+            <b>Executable Path: </b>{{config.licenseServer.executablePath}}
+          </ng-template>
+          <button type="button" class="btn btn-secondary" placement="left" popoverTitle="License Server Details" [ngbPopover]="popLicenseContent">
+            License Server
+          </button>
+        </div>
+      </div>
+    </div>
+  
+    <ngb-tabset>
+      <ngb-tab *ngFor="let instance of config.instances" title="{{instance.name}} Install">
+        <ng-template ngbTabContent>
+          <ngb-accordion #a="ngbAccordion">
+            <ngb-panel>
+              <ng-template  ngbPanelHeader >
+                <div  class="d-flex align-items-center justify-content-between">
+                  <button class="btn" ><b>Custom Search</b></button>
+                  <!--href="/search/{{config.environment}}/{{instance.name}}"-->
+                  <a [routerLink]="['/search', config.environment, instance.name]" class="btn btn-primary">Search This Installation</a>
+                </div>
+                
+              </ng-template>
+            </ngb-panel>
+          </ngb-accordion>
+          <ngb-accordion #a="ngbAccordion" *ngFor="let component of instance.components;">
+            <ngb-panel>
+              <ng-template  ngbPanelHeader >
+                <div  class="d-flex align-items-center justify-content-between">
+                  <button class="btn" ngbPanelToggle><b >{{component.name}}</b></button>
+                  <div style="margin-top: 3px;">
+                    <div *ngIf="component.isValid; else compNotValid">
+                      <span class="badge badge-primary badge-pill">
+                        <img class="validation-image-small" src='assets/images/check.png' alt='status'>
+                      </span>
+                    </div>
+                    <ng-template #compNotValid>
+                      <span class="badge badge-secondary badge-pill">
+                        <span class="validation-image-small">X</span>
+                      </span>
+                    </ng-template>
+                  </div>
+                </div>
+              </ng-template>
+              <ng-template ngbPanelContent>
+                <div class="row">
+                  <b>Service name: </b>{{component.serviceName}}</div>
+                <div class="row">
+                  <b>Executable Path: </b>{{component.executablePath}}</div>
+                <div *ngIf="component.isValid; else compDown">
+                  <div class="row">
+                    <a class="btn btn-outline-secondary" href="http://{{config.server}}:{{component.mainPort}}/action=admin" target="_blank">Admin UI</a>
+                  </div>
+                </div>
+                <ng-template #compDown>
+                  <div class="row">
+                    <button class="btn btn-outline-secondary">
+                      Not Responding
+                    </button>
+                  </div>
+                </ng-template>
+              </ng-template>
+            </ngb-panel>
+          </ngb-accordion>
+          <ngb-accordion #acc="ngbAccordion" *ngFor="let adminUIComponents of instance.adminComponents">
+            <ngb-panel>
+              <ng-template ngbPanelTitle>
+                <div class="row">
+                  <div class="col">
+                    <b>{{adminUIComponents.name}}</b>
+                  </div>
+                </div>
+              </ng-template>
+              <ng-template ngbPanelContent>
+                <div class="row">
+                  <b>Service name:</b> {{adminUIComponents.serviceName}}</div>
+                <div class="row">
+                  <b>Executable Path:</b> {{adminUIComponents.executablePath}}</div>
+                <div class="row">
+                  <a class="btn btn-outline-secondary" href="http://{{config.server}}:{{adminUIComponents.mainPort}}/login" target="_blank">Admin UI</a>
+                </div>
+              </ng-template>
+            </ngb-panel>
+          </ngb-accordion>
+        </ng-template>
+      </ngb-tab>
+    </ngb-tabset>
+  </div>
+  
+  <ng-template #loading>
+    <p>Loading...</p>
+  </ng-template>
+
+  
