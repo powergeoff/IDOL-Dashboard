@@ -18,7 +18,7 @@ export class PlatformService {
         private http: HttpClient
     ) { }
 
-    isComponentLive(server = 'phsweb2177', port = 8200): Observable<boolean> {
+    isComponentLive(server = 'myserver2177', port = 8200): Observable<boolean> {
         
         //prod command
         //below is sandbox
