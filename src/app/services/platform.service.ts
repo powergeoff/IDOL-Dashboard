@@ -20,23 +20,12 @@ export class PlatformService {
 
     isComponentLive(server = 'myserver2177', port = 8200): Observable<boolean> {
         
-        //prod command
-        //below is sandbox
-        //let statusUrl = 'https://webappdev.partners.org/geoff/api/ComponentPing?server=' + server + '&port=' + port;
-        //below is for 2181 installation
-        let statusUrl = '/api/ComponentPing?server=' + server + '&port=' + port;
+        
+        var random_boolean = Math.random() >= 0.5;
 
-        if (isDevMode()){
-            //statusUrl = 'http://' + server + ':' + port + '/action=GetPid&responseformat=json';
-            statusUrl = 'http://localhost:62912/api/ComponentPing?server=' + server + '&port=' + port;
-        }
+        return of(random_boolean);
 
-        return this.http.get<boolean>(statusUrl);
-        /* return this.http.get(statusUrl)
-            .pipe(
-                map(res => { return true }),
-                catchError(res => { return of(false) })
-            ); */
+        
     }
     //: Observable<string>
     //if instance has a QMS port - return it
