@@ -13,7 +13,7 @@
           <div class="col">License Server</div>
           <div class="col">
             <div *ngIf="env.licenseServer.isValid !== undefined; else licenseDown">
-              <img class="validation-image" [src]="env.licenseServer.isValid ? 'assets/images/tick.png': 'https://raw.githubusercontent.com/powergeoff/IDOL-Dashboard/master/src/assets/images/cross.png'" alt='validation check'>
+              <img class="validation-image" [src]="env.licenseServer.isValid ? 'https://raw.githubusercontent.com/powergeoff/IDOL-Dashboard/master/src/assets/images/tick.png': 'https://raw.githubusercontent.com/powergeoff/IDOL-Dashboard/master/src/assets/images/cross.png'" alt='validation check'>
             </div>
             <ng-template #licenseDown>
             </ng-template>
