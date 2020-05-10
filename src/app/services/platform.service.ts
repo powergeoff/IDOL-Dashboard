@@ -13,7 +13,7 @@ const httpOptions = {
 
 @Injectable()
 export class PlatformService {
-    private url = "app.config.json";
+    private url = "https://raw.githubusercontent.com/powergeoff/IDOL-Dashboard/master/src/app.config.json";
     constructor(
         private http: HttpClient
     ) { }
